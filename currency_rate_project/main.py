@@ -1,6 +1,6 @@
-import requests
 from fastapi import FastAPI, Depends, HTTPException
-from sqlalchemy.orm import Session 
+import requests
+from sqlalchemy.orm import Session
 from datetime import date, datetime
 from . import crud, models, schemas, dependencies, utils
 from .database import engine, Base
@@ -25,7 +25,7 @@ def read_rate(date: str = None, start_date: str = None, end_date: str = None, db
             rate_value = utils.fetch_rate_for_date(target_date)
             rate = schemas.CurrencyRateCreate(date=target_date, rate=rate_value)
             return crud.create_rate(db, rate)
-        except requests.HTTPError as e:
+        except requests.RequestException as e:
             raise HTTPException(status_code=400, detail=str(e))
     
     elif start_date and end_date:
@@ -51,5 +51,5 @@ def read_rate(date: str = None, start_date: str = None, end_date: str = None, db
             rate_value = utils.fetch_rate_for_date(today)
             rate = schemas.CurrencyRateCreate(date=today, rate=rate_value)
             return crud.create_rate(db, rate)
-        except requests.HTTPError as e:
+        except requests.RequestException as e:
             raise HTTPException(status_code=400, detail=str(e))
