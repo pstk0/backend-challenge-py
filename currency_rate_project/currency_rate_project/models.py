@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, Date # type: ignore
+from sqlalchemy import Column, Integer, String, Float, Date 
 from .database import Base
 
 class CurrencyRate(Base):

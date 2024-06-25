@@ -1,6 +1,6 @@
 import requests
 from fastapi import FastAPI, Depends, HTTPException
-from sqlalchemy.orm import Session # type: ignore
+from sqlalchemy.orm import Session 
 from datetime import date, datetime
 from . import crud, models, schemas, dependencies, utils
 from .database import engine, Base
