@@ -1,5 +1,6 @@
+from .currency_rate_project import models # type: ignore
 from sqlalchemy.orm import Session # type: ignore
-from . import models, schemas
+from .currency_rate_project import schemas # type: ignore
 
 def get_rate_by_date(db: Session, date: str):
     return db.query(models.CurrencyRate).filter(models.CurrencyRate.date == date).first()
