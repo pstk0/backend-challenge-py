@@ -2,8 +2,8 @@ from fastapi import FastAPI, Depends, HTTPException
 import requests
 from sqlalchemy.orm import Session
 from datetime import date, datetime
-from . import crud, models, schemas, dependencies, utils
-from .database import engine, Base
+from currency_rate import crud, models, schemas, dependencies, utils
+from currency_rate.database import engine, Base
 
 Base.metadata.create_all(bind=engine)
 
