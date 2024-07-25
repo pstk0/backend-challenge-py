@@ -11,6 +11,7 @@ source venv/bin/activate
 pip install fastapi uvicorn sqlalchemy pydantic requests httpx aioredis fastapi
 
 Project Structure:
+```bash
 currency_rate_project/
 ├── currency_rate/
 │   ├── __init__.py
@@ -27,30 +28,42 @@ currency_rate_project/
 └── venv/
     ├── Scripts/
     └── ...
+```
 
 Here's a brief description of each file:
 
-currency_rate/ directory: Contains the core application code.
+## currency_rate/ directory:
+Contains the core application code.
 
-__init__.py: Makes the directory a Python package.
+## __init__.py:
+Makes the directory a Python package.
 
-crud.py: Contains the database interaction logic.
+## crud.py:
+Contains the database interaction logic.
 
-database.py: Sets up the database connection.
+## database.py:
+Sets up the database connection.
 
-dependencies.py: Defines dependencies for the FastAPI application.
+## dependencies.py:
+Defines dependencies for the FastAPI application.
 
-main.py: The main entry point for the FastAPI application.
+## main.py:
+The main entry point for the FastAPI application.
 
-models.py: Defines the database models.
+## models.py:
+Defines the database models.
 
-schemas.py: Defines the Pydantic schemas for request and response models.
+## schemas.py:
+Defines the Pydantic schemas for request and response models.
 
-utils.py: Contains utility functions, including those for fetching data from the Frankfurter API.
+## utils.py:
+Contains utility functions, including those for fetching data from the Frankfurter API.
 
-logs/ directory: Stores log files.
+## logs/ directory:
+Stores log files.
 
-exchange_rate.log: Log file for API responses and other logs.
+## exchange_rate.log:
+Log file for API responses and other logs.
 
 run.py: Entry point for running the application using Uvicorn.
 
